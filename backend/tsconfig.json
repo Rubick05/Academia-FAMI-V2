@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist", // Donde se guardarán los archivos compilados
+    "rootDir": "./src"  // Carpeta donde están tus archivos TypeScript
+  },
+  "include": [
+    "src/**/*"
+  ]
+}
