@@ -21,11 +21,12 @@ const Horarios = () => {
     useEffect(() => {
         const fetchHorarios = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/horarios');
+                const response = await axios.get('http://localhost:5432/api/horarios');
                 const horarios = response.data;
 
                 // Organizar los horarios por días
                 const horariosPorDia: { [dia: string]: Clase[] } = {};
+
                 horarios.forEach((clase: Clase) => {
                     const dia = new Date(clase.horario).toLocaleString('es-ES', { weekday: 'long' });
                     if (!horariosPorDia[dia]) {
