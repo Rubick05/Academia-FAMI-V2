@@ -1,0 +1,95 @@
+/* Barra de navegación */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: rgba(234, 234, 234, 0); /* Barra completamente transparente al inicio */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Transición suave cuando se haga scroll */
+    color: #EAEAEA;
+  }
+  
+  /* Cuando se hace scroll, la barra tiene un degradado desde rgba(0, 0, 0, 0.5) hasta rgba(0, 0, 0, 0.85) */
+  .header.scrolled {
+    background: linear-gradient(to bottom
+    , rgba(0, 0, 0, 1) 40%,rgba(0, 0, 0, 0.603) 80%, rgba(0, 0, 0, 0) 100%);
+  }
+  
+  
+  /* Estilo del texto FAMI */
+  .logo-text {
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins */
+    font-size: 55px;
+    font-weight: bold; /* Fuente regular */
+    color: #ffffff; /* Color blanco */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 8%
+  }
+  
+  /* Cuando el usuario pasa el cursor sobre el logo */
+  .logo-text:hover {
+    color: rgba(169, 169, 169, 0.8); /* Color plomo transparente */
+  }
+  
+  /* Estilo de la navegación */
+  .navigation {
+    display: flex;
+    justify-content: right; /* Alinea los elementos a la izquierda */
+    gap: 20px; /* Espaciado entre los enlaces */
+    width: 70%; /* Ajusta el ancho del contenedor (más estrecho) */
+    margin-right: 3%
+    
+  }
+  
+  /* Estilo de los enlaces de navegación */
+  .navigation a {
+    font-family: 'Poppins', sans-serif; /* Aplicamos la fuente Poppins */
+    font-weight: normal; /* Fuente regular */
+    font-size: 16px; /* Tamaño de letra */
+    color: #EAEAEA; /* Color claro */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  
+  /* Al pasar el cursor sobre los enlaces de navegación */
+  .navigation a:hover,
+  .navigation a:focus {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+    color: #808080; /* Color gris plomo */
+  }
+  
+  /* Cuando un enlace es activo (se encuentra en la página actual) */
+  .navigation a.active {
+    text-decoration: underline;
+    color: #808080; /* Color gris plomo */
+  }
+  
+  /* Responsividad para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 15px;
+    }
+  
+    .navigation {
+      width: 100%;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+  
+    .header-button {
+      flex: 1;
+      text-align: center;
+      padding: 8px 0;
+    }
+  }
+  

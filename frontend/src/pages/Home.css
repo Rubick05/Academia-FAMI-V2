@@ -1,0 +1,57 @@
+/* src/pages/Home.css */
+
+/* Fondo degradado solo en la sección de Home */
+.home-section {
+    padding: 20px;
+    text-align: center;
+    max-width: 80%;
+    background: linear-gradient(to bottom, #440500, #B55000, #A20D09, #000154); /* Fondo degradado */
+    color: #EAEAEA; /* Texto claro */
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    min-height: 100vh; /* Asegura que la sección ocupe todo el alto de la pantalla */
+  }
+  
+  /* Resto del estilo de la página */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .photo-item {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: grayscale(20%);
+  }
+  
+  .photo-item:hover .photo {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+  }
+  
+  .photo-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #E94560; /* Acento coral */
+    color: #EAEAEA; /* Texto claro */
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
