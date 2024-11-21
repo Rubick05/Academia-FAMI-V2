@@ -1,0 +1,48 @@
+// prisma/schema.prisma
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Usuario {
+  id            Int      @id @default(autoincrement())
+  nombre        String
+  correo        String   @unique
+  telefono      String?
+  tipoUsuario   TipoUsuario
+  contrasena    String
+  inscripciones Inscripcion[]
+}
+
+model Instructor {
+  id            Int      @id @default(autoincrement())
+  nombre        String
+  correo        String   @unique
+  telefono      String?
+  especialidad  String
+  horarios      Horario[]
+}
+
+model Horario {
+  id          Int       @id @default(autoincrement())
+  dia         String
+  horaInicio  String
+  horaFin     String
+  instructor  Instructor @relation(fields: [instructorId], references: [id])
+  instructorId Int
+}
+
+model Inscripcion {
+  id           Int        @id @default(autoincrement())
+  usuarioId    Int
+  usuario      Usuario   @relation(fields: [usuarioId], references: [id])
+  clase        String
+  nivel        String
+  horarioId    Int
+  horario      Horario   @relation(fields: [horarioId], references: [id])
+}
